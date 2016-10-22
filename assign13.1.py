@@ -1,6 +1,6 @@
 import re
 import urllib
-from bs4 import *
+from BeautifulSoup import *
 
 url = raw_input("Enter - ")
 html = urllib.urlopen(url) .read()
