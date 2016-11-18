@@ -1,8 +1,6 @@
 import netmiko
 import json
 
-raw_input("Enter file name: ")
-
 devices = '''
 tahwangw1
 tahwanex1
