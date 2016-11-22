@@ -16,7 +16,7 @@ for name in device_group.split():
     device = socket.gethostbyname(name)
     try :
         print('-'*79)
-        print('Connecting to device', device)
+        print('Connecting to device', device, name)
         connection = netmiko.ConnectHandler(ip=device, device_type=device_type, username=username, password=password)
         print(connection.send_command('show clock'))
         connection.disconnect()
