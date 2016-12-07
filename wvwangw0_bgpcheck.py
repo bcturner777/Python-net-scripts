@@ -1,11 +1,10 @@
 import netmiko
 import json
-import socket
 import getpass
 
 devices = '''
-wvwangw0a
-wvwangw0b
+192.94.38.145
+192.94.38.149
 '''.strip().splitlines()
 
 device_type = 'cisco_ios'
