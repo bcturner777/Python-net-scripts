@@ -3,23 +3,24 @@ import json
 import socket
 import getpass
 
-device_group = raw_input("Enter device list seperated by space: ")
+devices = '''
+wvwangw0a
+wvwangw0b
+'''.strip().splitlines()
 
 device_type = 'cisco_ios'
 username = raw_input("Enter device list username: ")
 password = getpass.getpass(prompt='Enter device list password: ')
-command = raw_input("Enter specific show command: ")
 
 netmiko_exceptions = (netmiko.ssh_exception.NetMikoTimeoutException, netmiko.ssh_exception.NetMikoAuthenticationException)
 
-for name in device_group.split():
-    name = name.strip()
-    device = socket.gethostbyname(name)
+for device in devices :
     try :
         print('-'*79)
-        print('Connecting to device', device, name)
+        print('Connecting to device', device)
         connection = netmiko.ConnectHandler(ip=device, device_type=device_type, username=username, password=password)
-        print(connection.send_command(command))
+        print(connection.send_command('bgp-sum-v4'))
+        print(connection.send_command('bgp-adv-v4'))
         connection.disconnect()
     except netmiko_exceptions as e:
         print('Failed to ', device, e)
