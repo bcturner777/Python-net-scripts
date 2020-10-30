@@ -3,11 +3,11 @@ import json
 import socket
 import getpass
 
-device_group = raw_input("Enter device list seperated by space: ")
+device_group = input("Enter device list seperated by space: ")
 
 device_type = 'cisco_ios'
-username = raw_input("Enter device list username: ")
-command = raw_input("Enter specific show command: ")
+username = input("Enter device list username: ")
+command = input("Enter specific show command: ")
 password = getpass.getpass(prompt='Enter device list password: ')
 
 netmiko_exceptions = (netmiko.ssh_exception.NetMikoTimeoutException, netmiko.ssh_exception.NetMikoAuthenticationException)

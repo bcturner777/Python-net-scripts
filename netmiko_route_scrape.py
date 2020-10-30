@@ -3,7 +3,7 @@ from netmiko import ConnectHandler
 # Create a dictionary representing the device.
 testrouter = {
 'device_type': 'cisco_ios',
-'ip':   '134.86.133.30',
+'ip':   '172.16.217.50',
 'username': 'cisco',
 'password': 'cisco',
 'secret': 'cisco',
@@ -15,7 +15,7 @@ net_connect.enable()
 # Import all configured routes into a variable
 output = net_connect.send_command('show run | include ip route')
 # Print the results for the variable "output"
-print output
+print(output)
 # exit enable mode
 net_connect.exit_enable_mode()
 # close the ssh session
