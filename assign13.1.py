@@ -14,3 +14,4 @@ for tag in tags:
    print 'URL:',tag.get('href', None)
    print 'Contents:',tag.contents[0]
    print 'Attrs:',tag.attrs
+# change made here
